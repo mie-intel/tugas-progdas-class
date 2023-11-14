@@ -10,7 +10,7 @@ git pull https://github.com/mie-intel/tugas-progdas-class.git
 
 git add .
 
-git commit -m "<message>"
+git commit -m "message"
 
 git branch -M main
 
