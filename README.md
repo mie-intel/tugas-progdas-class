@@ -49,7 +49,7 @@ kalo sebelumnya udah pernah `git clone` repo ini, maka cara pakenya
 1. pergi ke directory `/src`
 2. buka `cmd` atau apapun itu
 3. compile dengan command `g++ -o app app.cpp account.cpp`
-4. run program dengan comman `app`
+4. run program dengan commans `app`
 
 ## last but not least
 
