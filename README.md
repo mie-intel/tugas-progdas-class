@@ -6,7 +6,7 @@
 
 kalo belum pernah setup git, maka setup dulu
 
-1. install github
+1. install git
 2. setup github
 
 ```
