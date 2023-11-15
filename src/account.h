@@ -19,7 +19,12 @@ public:
 	void printAccountInfo();
 };
 
-class checkingAccount;
-class savingsAccount;
+class checkingAccount : public bankAccount{
+	
+}
+
+class savingsAccount : public checkingAccount{
+
+}
 
 #endif

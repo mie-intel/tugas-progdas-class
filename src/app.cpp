@@ -4,8 +4,8 @@ using namespace std;
 
 int main(){
 
-	bankAccount a(100, 100);
-	a.printAccountInfo();
+	bankAccount app(100, 100);
+	app.printAccountInfo();
 
 	return 0;
 }
