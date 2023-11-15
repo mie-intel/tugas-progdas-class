@@ -2,12 +2,21 @@
 
 ## command cheatsheet
 
-kalo belum pernah setup github, maka setup dulu
+### Setup Git
 
-1. `git config --global user.name <username>`
-2. `git config --global user.email <email github>`
+kalo belum pernah setup git, maka setup dulu
+
+1. install github
+2. setup github
+
+```
+    git config --global user.name <username>
+    git config --global user.email <email github>
+```
 
 jangan lupa juga buat aktifkan personal token di github
+
+### belum pernah sentuh repo ini?
 
 kalo sebelumnya belum pernah sentuh repo ini, maka lakuin
 
@@ -19,6 +28,8 @@ kalo sebelumnya belum pernah sentuh repo ini, maka lakuin
 6. `git branch -M main`
 7. `git remote add origin https://github.com/mie-intel/tugas-progdas-class.git`
 8. `git push -u origin main`
+
+### udah pernah sentuh repo ini?
 
 kalo sebelumnya udah pernah `git clone` repo ini, maka cara pakenya
 
