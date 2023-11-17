@@ -42,7 +42,6 @@ void bankAccount::printAccountInfo(){
 
 checkingAccount::checkingAccount(int _accountNumber, double _balance, double _interest, double _minimumBalance, double _serviceCharge)
 	: bankAccount::bankAccount(_accountNumber, _balance){
-		
 	interest = _interest;
 	minimumBalance = _minimumBalance;
 	serviceCharge = _serviceCharge;
