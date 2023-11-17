@@ -40,7 +40,9 @@ void bankAccount::printAccountInfo(){
 	
 // };
 
-checkingAccount::checkingAccount(double _interest, double _minimumBalance, double _serviceCharge){
+checkingAccount::checkingAccount(int _accountNumber, double _balance, double _interest, double _minimumBalance, double _serviceCharge)
+	: bankAccount::bankAccount(_accountNumber, _balance){
+		
 	interest = _interest;
 	minimumBalance = _minimumBalance;
 	serviceCharge = _serviceCharge;
@@ -81,7 +83,7 @@ bool checkingAccount::balanceVerify(){
 void checkingAccount::writeCheck(){
 	cout << "CHECK INFORMATION" << endl;
 	cout << "=============================================" << endl;
-	cout << "Interest :\t" << retrieveInterest() << "%" << endl;
+	cout << "Interest :\t" << retrieveInterestRate() << "%" << endl;
 	cout << "Post Interest :\t" << postInterest() << endl;
 
 	cout << "Service Charge :\t";

@@ -24,7 +24,7 @@ class checkingAccount : public bankAccount{
 		double interest, minimumBalance, serviceCharge;
 	
 	public:
-		checkingAccount(double _interest, double _minimumBalance, double _serviceCharge);
+		checkingAccount(int _accountNumber, double _balance, double _interest, double _minimumBalance, double _serviceCharge);
 		void setInterestRate(double _interest);
 		double retrieveInterestRate();
 		void setMinimumBalance(double _minimumBalance);
@@ -40,6 +40,6 @@ class checkingAccount : public bankAccount{
 
 class savingsAccount : public bankAccount{
 
-}
+};
 
 #endif
