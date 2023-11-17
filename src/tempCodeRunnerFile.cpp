@@ -1,3 +1,0 @@
-class savingsAccount: protected bankAccount{
-
-// };

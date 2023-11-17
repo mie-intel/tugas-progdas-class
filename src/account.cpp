@@ -67,7 +67,7 @@ void checkingAccount::setServiceCharge(double _serviceCharge){
 }
 
 double checkingAccount::retrieveServiceCharge(){
-	return serviceCharge;
+	return (balance < minimumBalance) ? serviceCharge : 0;
 }
 
 double checkingAccount::postInterest(){
@@ -90,8 +90,14 @@ void checkingAccount::writeCheck(){
 }
 
 double checkingAccount::withdraw(double amount){
-	balance = max((double)0, balance - amount);
-	return min(balance, amount);
+	if(balance < amount){
+		balance = 0;
+		return balance;
+	}
+	else{
+		balance -= amount;
+		return amount;
+	}
 }
 
 void checkingAccount::printAccountInfo(){

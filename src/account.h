@@ -21,7 +21,7 @@ class bankAccount{
 
 class checkingAccount : public bankAccount{
 	protected:
-		double interest,minimumBalance,serviceCharge;
+		double interest, minimumBalance, serviceCharge;
 	
 	public:
 		checkingAccount(double _interest, double _minimumBalance, double _serviceCharge);
@@ -38,7 +38,7 @@ class checkingAccount : public bankAccount{
 		void printAccountInfo();
 };
 
-class savingsAccount : public checkingAccount{
+class savingsAccount : public bankAccount{
 
 }
 
