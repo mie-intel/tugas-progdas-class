@@ -25,8 +25,8 @@ class checkingAccount : public bankAccount{
 	
 	public:
 		checkingAccount(double _interest, double _minimumBalance, double _serviceCharge);
-		void setInterest(double _interest);
-		double retrieveInterest();
+		void setInterestRate(double _interest);
+		double retrieveInterestRate();
 		void setMinimumBalance(double _minimumBalance);
 		double retrieveMinimumBalance();
 		void setServiceCharge(double _serviceCharge);

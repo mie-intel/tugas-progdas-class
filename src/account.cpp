@@ -46,11 +46,11 @@ checkingAccount::checkingAccount(double _interest, double _minimumBalance, doubl
 	serviceCharge = _serviceCharge;
 }
 
-void checkingAccount::setInterest(double _interest){
+void checkingAccount::setInterestRate(double _interest){
 	interest = _interest;
 }
 
-double checkingAccount::retrieveInterest(){
+double checkingAccount::retrieveInterestRate(){
 	return interest;
 }
 
