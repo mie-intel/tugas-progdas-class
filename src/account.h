@@ -5,7 +5,7 @@
 using namespace std;
 
 class bankAccount{
-	public:
+	protected:
 		int accountNumber;
 		double balance;
 
