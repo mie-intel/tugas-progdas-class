@@ -99,7 +99,8 @@ double checkingAccount::withdraw(double amount){
 	}
 }
 
-// SAVING ACOUNR
+// SAVING ACCOUNT
+
 savingsAccount::savingsAccount(int _accountNumber, double _balance, double _interest, double _minimumBalance, double _serviceCharge) : 
 bankAccount(_accountNumber, _balance){
 	interest = _interest;
