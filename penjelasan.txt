@@ -1,0 +1,75 @@
+File Pertama (`account.h`):
+1. **Guarda Include:**
+   - Directive `#ifndef`, `#define`, dan `#endif` digunakan untuk membuat include guards. Mencegah file header di-include lebih dari sekali dalam satu unit translasi.
+
+2. **Inklusi Header:**
+   - `#include <bits/stdc++.h>`: Meng-include header yang mencakup sebagian besar pustaka C++ standar.
+   - `using namespace std;`: Mendeklarasikan penggunaan namespace C++ standar.
+
+3. **Definisi Kelas:**
+   - **Kelas `bankAccount`:**
+     - Atribut: `accountNumber` (integer) dan `balance` (double).
+     - Konstruktor: Menginisialisasi `accountNumber` dan `balance`.
+     - Fungsi Anggota:
+       - `setAccountNumber(int _accountNumber)`: Mengatur nomor akun.
+       - `retrieveAccountNumber()`: Mengambil nomor akun.
+       - `retrieveBalance()`: Mengambil saldo akun.
+       - `setBalance(double amount)`: Mengatur saldo akun.
+       - `depositMoney(double amount)`: Menambahkan uang ke akun.
+       - `withdraw(double amount)`: Menarik uang dari akun.
+       - `printAccountInfo()`: Menampilkan informasi akun.
+
+   - **Kelas `checkingAccount` (Diturunkan dari `bankAccount`):**
+     - Atribut Tambahan: `interest`, `minimumBalance`, dan `serviceCharge`.
+     - Konstruktor: Menginisialisasi kelas dasar dan mengatur atribut tambahan.
+     - Fungsi Anggota:
+       - Fungsi untuk mengatur dan mengambil tingkat bunga, saldo minimum, dan biaya layanan.
+       - `postInterest()`: Menghitung bunga pada saldo.
+       - `balanceVerify()`: Memeriksa apakah saldo berada di bawah minimum.
+       - `writeCheck()`: Menampilkan informasi tentang bunga, post-bunga, dan biaya layanan.
+       - Override dari fungsi `withdraw`.
+
+   - **Kelas `savingsAccount` (Diturunkan dari `bankAccount`):**
+     - Atribut: `interest`, `minimumBalance`, dan `serviceCharge`.
+     - Konstruktor: Menginisialisasi kelas dasar dan mengatur atribut tambahan.
+     - Fungsi Anggota:
+       - Fungsi untuk mengatur dan mengambil tingkat bunga.
+       - `deposit(double amount)`: Menambahkan uang ke akun.
+       - Override dari fungsi `withdraw`.
+       - `postInterest()`: Menghitung bunga pada saldo.
+
+4. **Penutup Guarda Include:**
+   - `#endif`: Menutup guarda include.
+
+File Kedua (`account.cpp`):
+
+1. **Pernyataan Include:**
+   - `#include "account.h"`: Meng-include deklarasi dari file header.
+   - `#include <bits/stdc++.h>`: Meng-include header yang mencakup sebagian besar pustaka C++ standar.
+
+2. **Implementasi Fungsi Anggota Kelas `bankAccount`:**
+   - Menyediakan implementasi untuk fungsi anggota yang dideklarasikan dalam kelas `bankAccount`.
+
+3. **Implementasi Fungsi Anggota Kelas `checkingAccount`:**
+   - Menyediakan implementasi untuk fungsi anggota yang dideklarasikan dalam kelas `checkingAccount`.
+
+4. **Implementasi Fungsi Anggota Kelas `savingsAccount`:**
+   - Menyediakan implementasi untuk fungsi anggota yang dideklarasikan dalam kelas `savingsAccount`.
+
+File Ketiga (`main.cpp`):
+
+1. **Pernyataan Include:**
+   - `#include "account.h"`: Meng-include deklarasi dari file header.
+   - `#include <bits/stdc++.h>`: Meng-include header yang mencakup sebagian besar pustaka C++ standar.
+
+2. **Fungsi Uji:**
+   - `testA()`: Mensimulasikan operasi pada objek `checkingAccount`.
+   - `testB()`: Mensimulasikan operasi pada objek `savingsAccount`.
+
+3. **Fungsi `main`:**
+   - Memanggil `testA()` dan `testB()` untuk mensimulasikan operasi pada akun cek dan tabungan.
+
+4. **Keluaran:**
+   - Mencetak hasil dari operasi yang disimulasikan ke konsol.
+
+Catatan: Kode menggunakan beberapa konstruk yang umumnya tidak disarankan dalam praktik pemrograman C++ (misalnya, termasuk `<bits/stdc++.h>` dan menggunakan `using namespace std;`). Disarankan untuk menggunakan header yang spesifik dan menghindari impor namespace global untuk organisasi dan pemeliharaan kode yang lebih baik.
