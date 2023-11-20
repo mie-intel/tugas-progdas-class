@@ -3,8 +3,6 @@
 
 using namespace std;
 
-// ini line baru
-
 // BANK ACCOUNT CLASS
 bankAccount::bankAccount(int _accountNumber, double _balance){
 	accountNumber = _accountNumber;
