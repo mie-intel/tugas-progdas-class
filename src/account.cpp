@@ -107,16 +107,12 @@ bankAccount(_accountNumber, _balance){
 	serviceCharge = _serviceCharge;
 }
 
-void savingsAccount::setInterestRate(double amount){
-	interest = amount;
-}
-
 double savingsAccount::retrieveInterestRate(){
 	return interest;
 }
 
-double savingsAccount::postInterest(){
-	return balance + balance * (interest) / 100;
+void savingsAccount::deposit(double amount){
+	balance += amount;
 }
 
 double savingsAccount::withdraw(double amount){
@@ -128,4 +124,12 @@ double savingsAccount::withdraw(double amount){
 		balance -= amount;
 		return amount;
 	}	
+}
+
+void savingsAccount::setInterestRate(double amount){
+	interest = amount;
+}
+
+double savingsAccount::postInterest(){
+	return balance + balance * (interest) / 100;
 }
