@@ -5,7 +5,7 @@
 using namespace std;
 
 class bankAccount{
-	protected: 
+	public:
 		int accountNumber;
 		double balance;
 
@@ -14,6 +14,7 @@ class bankAccount{
 		void setAccountNumber(int _accountNumber);
 		int retrieveAccountNumber();
 		double retrieveBalance();
+		void setBalance(double amount);
 		void depositMoney(double amount);
 		double withdraw(double amount);
 		void printAccountInfo();
@@ -35,17 +36,19 @@ class checkingAccount : public bankAccount{
 		bool balanceVerify();
 		void writeCheck();
 		double withdraw(double amount);
-		void printAccountInfo();
 };
 
 class savingsAccount : public bankAccount{
 	protected:
-		double interest, deposits, withdraws;
+		double interest, minimumBalance, serviceCharge;
 	
 	public:
-		savingsAccount(int _accountNumber, double _balance, double _interest, double _deposits, double _withDraws);
-
-
+		savingsAccount(int _accountNumber, double _balance, double _interest, double _minimumBalance, double _serviceCharge);
+		double retrieveInterestRate();
+		void deposit(double amount);
+		double withdraw(double amount);
+		void setInterestRate(double amount);
+		double postInterest();
 };
 
 #endif

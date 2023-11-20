@@ -35,10 +35,8 @@ void bankAccount::printAccountInfo(){
 	cout << "balance: " << balance << '\n';
 }
 
-// CHECKING ACCOUNT CLASS
-// class checkingAccount : protected bankAccount{
-	
-// };
+
+// CHECKING ACCOUNT
 
 checkingAccount::checkingAccount(int _accountNumber, double _balance, double _interest, double _minimumBalance, double _serviceCharge)
 	: bankAccount::bankAccount(_accountNumber, _balance){
@@ -82,10 +80,10 @@ bool checkingAccount::balanceVerify(){
 void checkingAccount::writeCheck(){
 	cout << "CHECK INFORMATION" << endl;
 	cout << "=============================================" << endl;
-	cout << "Interest :\t" << retrieveInterestRate() << "%" << endl;
-	cout << "Post Interest :\t" << postInterest() << endl;
+	cout << left << setw(25) << "Interest" << " : " << interest << "%" << endl;
+	cout << left << setw(25) << "Post Interest" << " : " << postInterest() << endl;
 
-	cout << "Service Charge :\t";
+	cout << left << setw(25) << "Service Charge" << " : ";
 	if(balanceVerify()) cout << (minimumBalance-balance) << endl;
 	else cout << 0 << endl;
 }
@@ -101,14 +99,33 @@ double checkingAccount::withdraw(double amount){
 	}
 }
 
-void checkingAccount::printAccountInfo(){
-	cout << "ACCOUNT INFORMATION" << endl;
-	cout << "=============================================" << endl;
-	cout << "Account Number :\t" << retrieveAccountNumber() << endl;
-	cout << "Balance :\t" << retrieveBalance() << endl;
+// SAVING ACOUNR
+savingsAccount::savingsAccount(int _accountNumber, double _balance, double _interest, double _minimumBalance, double _serviceCharge) : 
+bankAccount(_accountNumber, _balance){
+	interest = _interest;
+	minimumBalance = _minimumBalance;
+	serviceCharge = _serviceCharge;
 }
 
-// SAVINGS ACCOUNT CLASS
-// class savingsAccount: protected bankAccount{
+void savingsAccount::setInterestRate(double amount){
+	interest = amount;
+}
 
-// };
+double savingsAccount::retrieveInterestRate(){
+	return interest;
+}
+
+double savingsAccount::postInterest(){
+	return balance + balance * (interest) / 100;
+}
+
+double savingsAccount::withdraw(double amount){
+	if(balance < amount){
+		balance = 0;
+		return balance;
+	}
+	else{
+		balance -= amount;
+		return amount;
+	}	
+}
