@@ -39,6 +39,12 @@ class checkingAccount : public bankAccount{
 };
 
 class savingsAccount : public bankAccount{
+	protected:
+		double interest, deposits, withdraws;
+	
+	public:
+		savingsAccount(int _accountNumber, double _balance, double _interest, double _deposits, double _withDraws);
+
 
 };
 
